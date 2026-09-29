@@ -31,6 +31,7 @@ minimumReleaseAgeExclude:
   - stripe-replit-sync
 
 packages:
+  - dangote-junior-assistant
   - artifacts/*
   - lib/*
   - lib/integrations/*
