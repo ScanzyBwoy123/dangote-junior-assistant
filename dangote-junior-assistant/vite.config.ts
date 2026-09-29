@@ -9,18 +9,22 @@ export default defineConfig({
     tailwindcss(),
   ],
 
+  root: path.resolve(import.meta.dirname, '..'),
+
   resolve: {
     alias: {
-      '@': path.resolve(import.meta.dirname, 'src'),
+      '@': path.resolve(import.meta.dirname, '../src'),
     },
     dedupe: ['react', 'react-dom'],
   },
 
-  root: path.resolve(import.meta.dirname),
-
   build: {
     outDir: path.resolve(import.meta.dirname, 'dist'),
     emptyOutDir: true,
+
+    rollupOptions: {
+      input: path.resolve(import.meta.dirname, 'index.html'),
+    },
   },
 
   server: {
