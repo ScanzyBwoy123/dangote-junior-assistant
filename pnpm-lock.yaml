@@ -147,8 +147,8 @@ overrides:
 
 importers:
 
-  .:
-        devDependencies:
+          .:
+    devDependencies:
       '@types/node':
         specifier: 'catalog:'
         version: 25.9.6
