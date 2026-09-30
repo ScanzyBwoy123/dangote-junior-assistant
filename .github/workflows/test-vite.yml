@@ -24,11 +24,14 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile --filter @workspace/dangote-junior-assistant...
+      - name: Install app dependencies
+        working-directory: dangote-junior-assistant
+        run: pnpm install --no-frozen-lockfile --ignore-workspace
 
       - name: Verify React installation
-        run: pnpm --filter @workspace/dangote-junior-assistant exec node -e "console.log(require.resolve('react/jsx-runtime'))"
+        working-directory: dangote-junior-assistant
+        run: node -e "console.log(require.resolve('react/jsx-runtime'))"
 
       - name: Build Dangote Junior Assistant
-        run: pnpm --filter @workspace/dangote-junior-assistant build
+        working-directory: dangote-junior-assistant
+        run: pnpm run build
